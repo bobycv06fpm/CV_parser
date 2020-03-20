@@ -1,0 +1,4 @@
+re==2.2.1
+spacy==2.1.6
+docxtxt==0.8 
+nltk==3.3
