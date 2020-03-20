@@ -11,12 +11,6 @@ A parser for word and pdf resumes
 - Author: Hair Albeiro Parra Barrera 
 - Date: 2020-03-09
 
-## Sources: 
-- https://github.com/bjherger/ResumeParser/blob/master/bin/main.py 
-- https://spacy.io/usage/processing-pipelines 
-- https://medium.com/@divalicious.priya/information-extraction-from-cv-acec216c3f48 
-- https://github.com/divapriya/Language_Processing/blob/master/resumeParser.py
-- https://www.omkarpathak.in/2018/12/18/writing-your-own-resume-parser/ 
 
 ### Demo (main.py) 
 
@@ -80,3 +74,10 @@ Done in 22.538394451141357 seconds.
 4  cand_skills  [R/rstudio, Ml, Sql, Mysql, Nlp, Natural langu...
 5   raw_resume  Hair Albeiro Parra Barrera\n\nMontreal, Quebec...
 ```
+
+## Sources: 
+- https://github.com/bjherger/ResumeParser/blob/master/bin/main.py 
+- https://spacy.io/usage/processing-pipelines 
+- https://medium.com/@divalicious.priya/information-extraction-from-cv-acec216c3f48 
+- https://github.com/divapriya/Language_Processing/blob/master/resumeParser.py
+- https://www.omkarpathak.in/2018/12/18/writing-your-own-resume-parser/ 
