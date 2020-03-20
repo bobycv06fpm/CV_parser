@@ -1,4 +1,7 @@
-re==2.2.1
-spacy==2.1.6
 docxtxt==0.8 
 nltk==3.3
+pandas==0.24.2
+spacy==2.1.6
+re==2.2.1
+
+
