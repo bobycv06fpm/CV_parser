@@ -81,3 +81,8 @@ Done in 22.538394451141357 seconds.
 - https://medium.com/@divalicious.priya/information-extraction-from-cv-acec216c3f48 
 - https://github.com/divapriya/Language_Processing/blob/master/resumeParser.py
 - https://www.omkarpathak.in/2018/12/18/writing-your-own-resume-parser/ 
+
+## TODO 
+- Implement support for pdf documents
+- Fix degrees parsing outputs styling
+- Add hobbies extraction 
