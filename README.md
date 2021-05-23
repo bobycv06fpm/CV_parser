@@ -14,37 +14,56 @@ A parser for word and pdf resumes
 
 ### Demo (main.py) 
 
-```python
+```python 
 
 import cvparser
 
 if __name__ == "__main__": 
     
-    # Read word documents
+    # Provide paths to the documents to be parsed 
     PATH1 = '../data_raw/collegestudent.docx' ## Sample 1
-    PATH2 = '../data_raw/Hair_Parra_CV_English.docx' ## Sample 2
+    PATH2 = '../data_raw/Hair_Parra_CV_English.docx' ## Sample 2 
     
+    ## Example 1: Random CV template
     
-    # Sample 1 parsing
+    # Object initialization 
     cv_obj1 = cvparser.CV_parser(path=PATH1)
 
+    # individual parsing functions calling
     cand_name1 = cv_obj1.fetch_candidate_name() 
     cand_phones1 = cv_obj1.fetch_phone_numbers() 
-    cand_emails1 = cv_obj1.fetch_emails()
-    cand_educ1 = cv_obj1.fetch_education() 
-    cand_skills1 = cv_obj1.fetch_skills()
-    cand_df1 = cv_obj1.to_dataframe(savepath = '../data_clean/fetched_collegestudent.csv')
-        
+    cand_emails1 = cv_obj1.fetch_emails() 
+    cand_educ1 = cv_obj1.fetch_education()  
+    cand_skills1 = cv_obj1.fetch_skills() 
     
-    # Sample 2 parsing
-    cv_obj2 = cvparser.CV_parser(path=PATH2)
+    # saving the parsed objects 
+    cand_df1 = cv_obj1.to_dataframe(savedir='../data_clean/', 
+                                    filename='fetched_collegestudent',
+                                    defaultsave=False) 
+    cand_df1 = cv_obj1.to_json(savedir='../data_clean/', 
+                               filename='fetched_collegestudent', 
+                               defaultsave=False) 
+    
+    
+    ## 2. Example 2: my own CV sample
+    
+    # object initalization 
+    cv_obj2 = cvparser.CV_parser(path=PATH2) 
 
+    # individual parsing functions calling
     cand_name2 = cv_obj2.fetch_candidate_name() 
     cand_phones2 = cv_obj2.fetch_phone_numbers() 
-    cand_emails2 = cv_obj2.fetch_emails()
-    cand_educ2 = cv_obj2.fetch_education() 
-    cand_skills2 = cv_obj2.fetch_skills()
-    cand_df2 = cv_obj2.to_dataframe(savepath = '../data_clean/fetched_Hair_Parra_CV_English.csv')
+    cand_emails2 = cv_obj2.fetch_emails() 
+    cand_educ2 = cv_obj2.fetch_education()  
+    cand_skills2 = cv_obj2.fetch_skills() 
+    
+    # save the parsed objects to csv or json 
+    cand_df2 = cv_obj2.to_dataframe(savedir='../data_clean/', 
+                                    filename='fetched_Hair_Parra_CV_English',
+                                    defaultsave=False) 
+    cand_df2 = cv_obj2.to_json(savedir='../data_clean/', 
+                               filename='fetched_Hair_Parra_CV_English', 
+                               defaultsave=False) 
 
 
 ```
@@ -73,6 +92,37 @@ Done in 22.538394451141357 seconds.
 3    education                                     [(B.A., 2020)]
 4  cand_skills  [R/rstudio, Ml, Sql, Mysql, Nlp, Natural langu...
 5   raw_resume  Hair Albeiro Parra Barrera\n\nMontreal, Quebec...
+```
+
+**JSON output:** 
+```
+{
+    "names": [
+        "Hair",
+        "Alb",
+        "Parra Barrera"
+    ],
+    "phones": [
+        "999-999-9999",
+        "014-2016"
+    ],
+    "emails": [
+        "jair.parra@outlook.com",
+        "hair.parra@gmail.com"
+    ],
+    "education": [
+        "B.A."
+    ],
+    "skills": [
+        "Sql",
+        "R/rstudio",
+        "Postgresql",
+        "Nlp",
+        "Ml",
+        "Mysql"
+    ],
+    "raw_resume": "Hair Alb\teiro Parra [...]"
+}
 ```
 
 ## Sources: 
