@@ -1,10 +1,12 @@
 ,Field,Content
-0,name,"['Susan Forsythe', 'LinkedIn URL', 'Susan Forsythe']"
+0,names,"['Susan', 'Forsythe', 'Susan Forsythe\n\nSometown']"
 1,phones,['555.555.5555']
 2,emails,['sf@somedomain.com']
-3,education,['BusinessMajor']
-4,cand_skills,[]
-5,raw_resume,"Susan Forsythe
+3,github,[]
+4,linkedin,[]
+5,education,['BusinessMajor']
+6,skills,[]
+7,raw_resume,"Susan Forsythe
 
 Sometown, AZ 55555  |  555.555.5555  |  sf@somedomain.com  |  LinkedIn URL
 

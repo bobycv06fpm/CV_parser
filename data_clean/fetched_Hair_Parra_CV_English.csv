@@ -1,12 +1,14 @@
 ,Field,Content
-0,name,"['Hair Albeiro', 'Albeiro Parra', 'Lexicoder Lemmatizer']"
-1,phones,"['514-586-8551', '014-2016']"
+0,names,"['Hair', 'Alb', 'Parra Barrera']"
+1,phones,"['999-999-9999', '014-2016']"
 2,emails,"['jair.parra@outlook.com', 'hair.parra@gmail.com']"
-3,education,"[('B.A.', '2020')]"
-4,cand_skills,"['R/rstudio', 'Ml', 'Sql', 'Mysql', 'Nlp', 'Natural language processing', 'Postgresql']"
-5,raw_resume,"Hair Albeiro Parra Barrera
+3,github,['https://github.com/JairParra']
+4,linkedin,['https://www.linkedin.com/in/hair-parra-526ba19b/']
+5,education,['B.A.']
+6,skills,"['Sql', 'R/rstudio', 'Postgresql', 'Nlp', 'Ml', 'Mysql']"
+7,raw_resume,"Hair Alb	eiro Parra Barrera
 
-Montreal, Quebec, Canada.  Mobile.: 514-586-8551
+Montreal, Quebec, Canada.  Mobile.: 999-999-9999
 
 		Email: jair.parra@outlook.com / hair.parra@gmail.com
 
