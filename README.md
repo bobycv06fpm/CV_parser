@@ -24,17 +24,10 @@ if __name__ == "__main__":
     PATH1 = '../data_raw/collegestudent.docx' ## Sample 1
     PATH2 = '../data_raw/Hair_Parra_CV_English.docx' ## Sample 2 
     
-    ## Example 1: Random CV template
+    ## Example 1: Random standup CV
     
     # Object initialization 
-    cv_obj1 = cvparser.CV_parser(path=PATH1)
-
-    # individual parsing functions calling
-    cand_name1 = cv_obj1.fetch_candidate_name() 
-    cand_phones1 = cv_obj1.fetch_phone_numbers() 
-    cand_emails1 = cv_obj1.fetch_emails() 
-    cand_educ1 = cv_obj1.fetch_education()  
-    cand_skills1 = cv_obj1.fetch_skills() 
+    cv_obj1 = cvparser.CV_parser(path=PATH1) 
     
     # saving the parsed objects 
     cand_df1 = cv_obj1.to_dataframe(savedir='../data_clean/', 
@@ -42,20 +35,13 @@ if __name__ == "__main__":
                                     defaultsave=False) 
     cand_df1 = cv_obj1.to_json(savedir='../data_clean/', 
                                filename='fetched_collegestudent', 
-                               defaultsave=False) 
+                               defaultsave=False ) 
     
     
     ## 2. Example 2: my own CV sample
     
     # object initalization 
     cv_obj2 = cvparser.CV_parser(path=PATH2) 
-
-    # individual parsing functions calling
-    cand_name2 = cv_obj2.fetch_candidate_name() 
-    cand_phones2 = cv_obj2.fetch_phone_numbers() 
-    cand_emails2 = cv_obj2.fetch_emails() 
-    cand_educ2 = cv_obj2.fetch_education()  
-    cand_skills2 = cv_obj2.fetch_skills() 
     
     # save the parsed objects to csv or json 
     cand_df2 = cv_obj2.to_dataframe(savedir='../data_clean/', 
@@ -63,8 +49,7 @@ if __name__ == "__main__":
                                     defaultsave=False) 
     cand_df2 = cv_obj2.to_json(savedir='../data_clean/', 
                                filename='fetched_Hair_Parra_CV_English', 
-                               defaultsave=False) 
-
+                               defaultsave=False )
 
 ```
 **Output:** 
@@ -73,25 +58,41 @@ if __name__ == "__main__":
 Initializing...
 processing file...
 Fitting text to spaCY NLP model...
-Done in 25.215816974639893 seconds.
+Done in 1.5814540386199951 seconds.
+
+Parsing document...
+self.doc.sents: <generator object at 0x000001FC4F91CA60>
          Field                                            Content
-0         name     [Susan Forsythe, LinkedIn URL, Susan Forsythe]
+0        names      [Susan, Forsythe, Susan Forsythe\n\nSometown]
 1       phones                                     [555.555.5555]
 2       emails                                [sf@somedomain.com]
-3    education                                    [BusinessMajor]
-4  cand_skills                                                 []
-5   raw_resume  Susan Forsythe\n\nSometown, AZ 55555  |  555.5...
+3       github                                                 []
+4     linkedin                                                 []
+5      degrees                                    [BusinessMajor]
+6       skills                                                 []
+7    education                                      [XYZ College]
+8    languages                                                 []
+9    addresses                                                 []
+10  raw_resume  Susan Forsythe\n\nSometown, AZ 55555  |  555.5...
 Initializing...
 processing file...
 Fitting text to spaCY NLP model...
-Done in 22.538394451141357 seconds.
+Done in 1.3370723724365234 seconds.
+
+Parsing document...
+self.doc.sents: <generator object at 0x000001FC65E3AD30>
          Field                                            Content
-0         name  [Hair Albeiro, Albeiro Parra, Lexicoder Lemmat...
-1       phones                           [514-586-8551, 014-2016]
+0        names             [Hair, Albeiro, Albeiro Parra Barrera]
+1       phones                           [999-999-9999, 014-2016]
 2       emails     [jair.parra@outlook.com, hair.parra@gmail.com]
-3    education                                     [(B.A., 2020)]
-4  cand_skills  [R/rstudio, Ml, Sql, Mysql, Nlp, Natural langu...
-5   raw_resume  Hair Albeiro Parra Barrera\n\nMontreal, Quebec...
+3       github                     [https://github.com/JairParra]
+4     linkedin  [https://www.linkedin.com/in/hair-parra-526ba1...
+5      degrees                                             [B.A.]
+6       skills       [R/rstudio, Nlp, Postgresql, Sql, Ml, Mysql]
+7    education                       [McGill University Montreal]
+8    languages  [cantonese, chinese, english, french, italian,...
+9    addresses                                                 []
+10  raw_resume  Hair Albeiro Parra Barrera\n\nMontreal, Quebec...
 ```
 
 **JSON output:** 
@@ -99,8 +100,8 @@ Done in 22.538394451141357 seconds.
 {
     "names": [
         "Hair",
-        "Alb",
-        "Parra Barrera"
+        "Albeiro",
+        "Albeiro Parra Barrera"
     ],
     "phones": [
         "999-999-9999",
@@ -110,18 +111,41 @@ Done in 22.538394451141357 seconds.
         "jair.parra@outlook.com",
         "hair.parra@gmail.com"
     ],
-    "education": [
+    "github": [
+        "https://github.com/JairParra"
+    ],
+    "linkedin": [
+        "https://www.linkedin.com/in/hair-parra-526ba19b/"
+    ],
+    "degrees": [
         "B.A."
     ],
     "skills": [
-        "Sql",
         "R/rstudio",
-        "Postgresql",
         "Nlp",
+        "Postgresql",
+        "Sql",
         "Ml",
         "Mysql"
     ],
-    "raw_resume": "Hair Alb\teiro Parra [...]"
+    "education": [
+        "McGill University Montreal"
+    ],
+    "languages": [
+        "cantonese",
+        "chinese",
+        "english",
+        "french",
+        "italian",
+        "japanese",
+        "korean",
+        "mandarin",
+        "portuguese",
+        "russian",
+        "spanish"
+    ],
+    "addresses": [],
+    "raw_resume": "Hair Albeiro Parra Barrera\n\nMontreal [...]"
 }
 ```
 
