@@ -96,7 +96,7 @@ self.doc.sents: <generator object at 0x000001FC65E3AD30>
 ```
 
 **JSON output:** 
-```
+```json
 {
     "names": [
         "Hair",
