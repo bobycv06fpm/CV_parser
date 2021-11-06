@@ -1,8 +1,8 @@
 {
     "names": [
         "Hair",
-        "Alb",
-        "Parra Barrera"
+        "Albeiro",
+        "Albeiro Parra Barrera"
     ],
     "phones": [
         "999-999-9999",
@@ -18,16 +18,33 @@
     "linkedin": [
         "https://www.linkedin.com/in/hair-parra-526ba19b/"
     ],
-    "education": [
+    "degrees": [
         "B.A."
     ],
     "skills": [
-        "Sql",
         "R/rstudio",
-        "Postgresql",
-        "Nlp",
         "Ml",
-        "Mysql"
+        "Sql",
+        "Nlp",
+        "Mysql",
+        "Postgresql"
     ],
-    "raw_resume": "Hair Alb\teiro Parra Barrera\n\nMontreal, Quebec, Canada.  Mobile.: 999-999-9999\n\n\t\tEmail: jair.parra@outlook.com / hair.parra@gmail.com\n\nGitHub: https://github.com/JairParra\n\nLinkedIn: https://www.linkedin.com/in/hair-parra-526ba19b/\n\nDataCamp: https://www.datacamp.com/profile/jairparra\n\nPortfolio Blog: https://blog.jairparraml.com/\n\nPorfolio (Building): https://jaiparraml.com\n\n\n\n\n\nWORK HISTORY\n\nNLP & Data Science Research Assistant\n\nDemoTip Lab\n\nMay 2019 \u2013 February 2020\n\n-  Perform research and tests on NLP tools with libraries such as Python re, nltk, spaCy, genism, translator, spellchecker, and R quanteda, spacyR, etc.  for treatment of English, French and Spanish. Perform lab-project-related linguistic research. \n\n-  Lexicoder Lemmatizer : Create and implement NLP algorithms for lemmatizing, extending and improving lexical sentiment dictionaries in English, French, Spanish and Italian; Perform and implement metrics and testing in R with Quanteda. \n\nPrivate Tutor  \n\nSelf-Employed\n\nSeptember 2016 - Present\n\n- Tutored Calculus I,II,III, Linear Algebra, Probability & Statistics, Python, R and Discrete Mathematics. \n\n- Tutored modern languages such as Mandarin Chinese, Spanish, French and Japanese\n\n\n\nEDUCATION\n\nMcGill University\n\nMontreal, QC\n\nSeptember 2016 \u2013 May 2020\n\n- B.A. Computer Science with triple minor in Statistics, Linguistics and East Asian Languages, CGPA: 3.56. \n\nComputer Science\n\nPython; R; SQL; Bash; Git/Github; Java; C;  O-Caml;  OOP;  Algorithms and Data Structures; Theory of Computation; Applied Machine Learning; Natural Language Processing,; Database Systems; Introduction to Computer Systems;;  Programming languages & Paradigms (OOP ,Functional programming),. \n\nMathematics\n\nCalculus I, II, III;  Linear Algebra & Geometry; Honours Applied Linear Algebra; Probability ; Mathematical Statistics;  Discrete Mathematics; Honours Regression & Analysis of Variance. Stochastic Processes (Self-study); Generalized Linear Models (GLMs); Time Series. Self-study abstract algebra & analysis.\n\nLinguistics \n\nGeneral Linguistics; Phonetics; Phonology; Semantics, Theoretical Syntax & graduate-level Syntax, Formal Logic. \n\nVanier College \n\nMontreal , QC  \n\nAugust 2014 \u2013 Jun 2016\n\n- DCS / D.E.C. Languages and Cultures , Honour Roll (2014-2016), Dean\u2019s Honour Roll (Winter 2014, Autumn 2014). \n\n\n\nTECHNICAL SKILLS\n\nProgramming Languages ,Technologies & Skills: \n\n-Proficient: Python (Numpy, Pandas, Matplotlib, Seaborn, re, nltk, spaCy, genism, flair, scikit-learn, Tensorflow, others) ; R/RStudio ( ggplot2, forecast , Quanteda, spacyR) ; SQL (MySQL, PostgreSQL, DB2), Bash/Shell, Git/Github;  \n\n-Familiar: Java; C; C++ (Elementary),  HTML & CSS (Elementary), OCaml ; Microsoft Office (Word, Excel, Powerpoint). \n\n- Excellent analytical, communication , problem  solving, collaboration & team skills. Autodidactic. \n\nHuman Languages (7-fluent): \n\n- Spanish (Native), English  (Bilingual), French (Bilingual) , Mandarin Chinese (Intermediate), Japanese (Intermediate), Italian (Intemediate), Portuguese (Intermediate), Russian (Elementary), Cantonese (Elementary), Korean (Elementary).\n\n\n\nPROJECTS\n\n- Modified MNIST: State-of-the-art Exploration https://github.com/JairParra/Modified_MNIST_state-of-the-art_exploration\n\n- LDA Centroid-based Summarization: https://github.com/JairParra/LDA_centroid_based_summarization\n\n- Kaggle_Reddit_Multiclass_Classification  https://github.com/JairParra/Kaggle_Reddit_Multiclass_Classification\n\n- ML Reproducibility Challenge: https://github.com/JairParra/ML_Reproducibility_Challenge\n\n- Implementing Logistic Regression & LDA from scratch: https://github.com/JairParra/Logreg_LDA_from_scratch\n\n- NLPChallengeAI4Good: https://github.com/JairParra/NLPChallengeAI4Good\n\n- Perceptron NN from scratch: https://github.com/JairParra/Perceptron_NN_from_scratch \n\n- Portfolio (building): https://jaiparraml.com\n\n- Blog-portfolio: https://blog.jairparraml.com/\n\n\n\nHair Parra - 2"
+    "education": [
+        "McGill University Montreal"
+    ],
+    "languages": [
+        "cantonese",
+        "chinese",
+        "english",
+        "french",
+        "italian",
+        "japanese",
+        "korean",
+        "mandarin",
+        "portuguese",
+        "russian",
+        "spanish"
+    ],
+    "addresses": [],
+    "raw_resume": "Hair Albeiro Parra Barrera\n\nMontreal, Quebec, Canada.  Mobile.: 999-999-9999\n\n\t\tEmail: jair.parra@outlook.com / hair.parra@gmail.com\n\nGitHub: https://github.com/JairParra\n\nLinkedIn: https://www.linkedin.com/in/hair-parra-526ba19b/\n\nDataCamp: https://www.datacamp.com/profile/jairparra\n\nPortfolio Blog: https://blog.jairparraml.com/\n\nPorfolio (Building): https://jaiparraml.com\n\n\n\n\n\nWORK HISTORY\n\nNLP & Data Science Research Assistant\n\nDemoTip Lab\n\nMay 2019 \u2013 February 2020\n\n-  Perform research and tests on NLP tools with libraries such as Python re, nltk, spaCy, genism, translator, spellchecker, and R quanteda, spacyR, etc.  for treatment of English, French and Spanish. Perform lab-project-related linguistic research. \n\n-  Lexicoder Lemmatizer : Create and implement NLP algorithms for lemmatizing, extending and improving lexical sentiment dictionaries in English, French, Spanish and Italian; Perform and implement metrics and testing in R with Quanteda. \n\nPrivate Tutor  \n\nSelf-Employed\n\nSeptember 2016 - Present\n\n- Tutored Calculus I,II,III, Linear Algebra, Probability & Statistics, Python, R and Discrete Mathematics. \n\n- Tutored modern languages such as Mandarin Chinese, Spanish, French and Japanese\n\n\n\nEDUCATION\n\nMcGill University\n\nMontreal, QC\n\nSeptember 2016 \u2013 May 2020\n\n- B.A. Computer Science with triple minor in Statistics, Linguistics and East Asian Languages, CGPA: 3.56. \n\nComputer Science\n\nPython; R; SQL; Bash; Git/Github; Java; C;  O-Caml;  OOP;  Algorithms and Data Structures; Theory of Computation; Applied Machine Learning; Natural Language Processing; Database Systems; Introduction to Computer Systems;;  Programming languages & Paradigms (OOP ,Functional programming),. \n\nMathematics\n\nCalculus I, II, III;  Linear Algebra & Geometry; Honours Applied Linear Algebra; Probability ; Mathematical Statistics;  Discrete Mathematics; Honours Regression & Analysis of Variance. Stochastic Processes (Self-study); Generalized Linear Models (GLMs); Time Series. Self-study abstract algebra & analysis.\n\nLinguistics \n\nGeneral Linguistics; Phonetics; Phonology; Semantics, Theoretical Syntax & graduate-level Syntax, Formal Logic. \n\nVanier College \n\nMontreal , QC  \n\nAugust 2014 \u2013 Jun 2016\n\n- DCS / D.E.C. Languages and Cultures , Honour Roll (2014-2016), Dean\u2019s Honour Roll (Winter 2014, Autumn 2014). \n\n\n\nTECHNICAL SKILLS\n\nProgramming Languages ,Technologies & Skills: \n\n-Proficient: Python (Numpy, Pandas, Matplotlib, Seaborn, re, nltk, spaCy, genism, flair, scikit-learn, Tensorflow, others) ; R/RStudio ( ggplot2, forecast , Quanteda, spacyR) ; SQL (MySQL, PostgreSQL, DB2), Bash/Shell, Git/Github;  \n\n-Familiar: Java; C; C++ (Elementary),  HTML & CSS (Elementary), OCaml ; Microsoft Office (Word, Excel, Powerpoint). \n\n- Excellent analytical, communication , problem  solving, collaboration & team skills. Autodidactic. \n\nHuman Languages (7-fluent): \n\n- Spanish (Native), English  (Bilingual), French (Bilingual) , Mandarin Chinese (Intermediate), Japanese (Intermediate), Italian (Intemediate), Portuguese (Intermediate), Russian (Elementary), Cantonese (Elementary), Korean (Elementary).\n\n\n\nPROJECTS\n\n- Modified MNIST: State-of-the-art Exploration https://github.com/JairParra/Modified_MNIST_state-of-the-art_exploration\n\n- LDA Centroid-based Summarization: https://github.com/JairParra/LDA_centroid_based_summarization\n\n- Kaggle_Reddit_Multiclass_Classification  https://github.com/JairParra/Kaggle_Reddit_Multiclass_Classification\n\n- ML Reproducibility Challenge: https://github.com/JairParra/ML_Reproducibility_Challenge\n\n- Implementing Logistic Regression & LDA from scratch: https://github.com/JairParra/Logreg_LDA_from_scratch\n\n- NLPChallengeAI4Good: https://github.com/JairParra/NLPChallengeAI4Good\n\n- Perceptron NN from scratch: https://github.com/JairParra/Perceptron_NN_from_scratch \n\n- Portfolio (building): https://jaiparraml.com/\n\n- Blog-portfolio: https://blog.jairparraml.com/\n\n\n\nHair Parra - 2"
 }

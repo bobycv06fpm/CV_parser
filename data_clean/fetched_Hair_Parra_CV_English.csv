@@ -1,12 +1,15 @@
 ,Field,Content
-0,names,"['Hair', 'Alb', 'Parra Barrera']"
+0,names,"['Hair', 'Albeiro', 'Albeiro Parra Barrera']"
 1,phones,"['999-999-9999', '014-2016']"
 2,emails,"['jair.parra@outlook.com', 'hair.parra@gmail.com']"
 3,github,['https://github.com/JairParra']
 4,linkedin,['https://www.linkedin.com/in/hair-parra-526ba19b/']
-5,education,['B.A.']
-6,skills,"['Sql', 'R/rstudio', 'Postgresql', 'Nlp', 'Ml', 'Mysql']"
-7,raw_resume,"Hair Alb	eiro Parra Barrera
+5,degrees,['B.A.']
+6,skills,"['R/rstudio', 'Ml', 'Sql', 'Nlp', 'Mysql', 'Postgresql']"
+7,education,['McGill University Montreal']
+8,languages,"['cantonese', 'chinese', 'english', 'french', 'italian', 'japanese', 'korean', 'mandarin', 'portuguese', 'russian', 'spanish']"
+9,addresses,[]
+10,raw_resume,"Hair Albeiro Parra Barrera
 
 Montreal, Quebec, Canada.  Mobile.: 999-999-9999
 
@@ -62,7 +65,7 @@ September 2016 – May 2020
 
 Computer Science
 
-Python; R; SQL; Bash; Git/Github; Java; C;  O-Caml;  OOP;  Algorithms and Data Structures; Theory of Computation; Applied Machine Learning; Natural Language Processing,; Database Systems; Introduction to Computer Systems;;  Programming languages & Paradigms (OOP ,Functional programming),. 
+Python; R; SQL; Bash; Git/Github; Java; C;  O-Caml;  OOP;  Algorithms and Data Structures; Theory of Computation; Applied Machine Learning; Natural Language Processing; Database Systems; Introduction to Computer Systems;;  Programming languages & Paradigms (OOP ,Functional programming),. 
 
 Mathematics
 
@@ -114,7 +117,7 @@ PROJECTS
 
 - Perceptron NN from scratch: https://github.com/JairParra/Perceptron_NN_from_scratch 
 
-- Portfolio (building): https://jaiparraml.com
+- Portfolio (building): https://jaiparraml.com/
 
 - Blog-portfolio: https://blog.jairparraml.com/
 

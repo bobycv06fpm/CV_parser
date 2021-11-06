@@ -14,29 +14,37 @@ cyparser.py:
 
 ### 1. Imports ###
 
-import re
-import json
-import spacy
-import docx2txt
+import re 
+import json 
+import nltk 
+import spacy 
+import docx2txt 
 import pandas as pd
 from time import time
-from urllib.parse import urlparse 
-from spacy.matcher import Matcher
-from nltk.util import ngrams
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
-from nltk.tokenize import sent_tokenize
+from urllib.parse import urlparse
+from spacy.matcher import Matcher 
+from nltk.util import ngrams 
+from nltk.corpus import stopwords 
+from nltk.tokenize import word_tokenize 
+from nltk.tokenize import sent_tokenize 
 from nltk.stem import WordNetLemmatizer
 from nltk.stem.snowball import SnowballStemmer
 from win32com.client import Dispatch
 speak = Dispatch("SAPI.SpVoice")
 
 
+nltk.download('stopwords')
+nltk.download('punkt')
+nltk.download('averaged_perceptron_tagger')
+nltk.download('maxent_ne_chunker')
+nltk.download('words')
+
 ###############################################################################
 
 EMAIL_REGEX = r'[\w\.-]+@[\w\.-]+'
 PHONE_REGEX = r'(\d{3}[-\.\s]??\d{3}[-\.\s]??\d{4}|\(\d{3}\)\s*\d{3}[-\.\s]??\d{4}|\d{3}[-\.\s]??\d{4})'
 LINKS_REGEX = r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
+STREET_REGEX = r'\d{1,4}( \w+){1,5}, (.*), ( \w+){1,5}, (AZ|CA|CO|NH), [0-9]{5}(-[0-9]{4})?'
 SYMBOLS = r'[?|$|.|!|,]'
 SYMBOLS_ext = r'[?|$|.|!|,|\s]|(of)|(and)| '
 
@@ -52,6 +60,20 @@ EDUCATION = [
     'ssc', 'hsc', 'cbse', 'icse', 'x', 'xii'
 ]
 
+# Languages 
+LANGUAGES = [
+    'english','french','spanish','italian','portuguese', 
+    'chinese','mandarin', 'japanese','korean','cantonese', 
+    'german','russian'
+]
+
+# Educational institutions 
+SCHOOLWORDS = [
+    'school', 'college', 'univers', 'academy', 'faculty',
+    'institute', 'faculdades', 'Schola', 'schule',
+    'lise', 'lyceum', 'lycee', 'polytechnic', 'kolej',
+    'ünivers', 'okul',
+]
 
 ###############################################################################
 
@@ -63,14 +85,14 @@ class CV_parser():
 
     Attributes
     ----------
-    says_str : str
+    says_str : str 
         a formatted string to print out what the animal says
-    name : str
+    name : str 
         the name of the animal
-    sound : str
+    sound : str 
         the sound that the animal makes
     num_legs : int
-        the number of legs the animal has (default 4)
+        the number of legs the animal has (default 4) 
 
     Methods
     -------
@@ -83,6 +105,7 @@ class CV_parser():
         Sets up a CV parser according to input language.
         Example languages: 'english','french','spanish'
         NOTE: Works best in English (to be extended to French later)
+        
         @attributes: 
             @ stringtext: full parsed word text 
             @ _language : parser language 
@@ -91,8 +114,9 @@ class CV_parser():
             @ stemmer : nltk Snowball stemmer  
             @ lemmatizer : nltk lemmatizer 
             @ stopwords :  stopwords list from input language
+            
         @ other arguments: 
-            @ path:  input PATH to try to parse
+            @ path:  input PATH to try to parse 
         """
         
         ### Attributes ### 
@@ -100,13 +124,13 @@ class CV_parser():
         # General 
         self._language = language 
         self.language_model = None 
-        self.stringtext = "" # text version of the input
-        self.stopwords = None
+        self.stringtext = "" # text version of the input 
+        self.stopwords = None 
         
         # Parsing objects 
         self.word_tokenizer = word_tokenize  # Re-assign word tokenizer
         self.sent_tokenizer = sent_tokenize  # Re-assign sentence tokenizer
-        self.stemmer = None
+        self.stemmer = None 
         self.lemmatizer = WordNetLemmatizer()  # Re-assign lemmatizer
         
         # SpaCy objects 
@@ -213,14 +237,14 @@ class CV_parser():
 
         # Add patterns to match proper names
         patterns = [[{'POS': 'PROPN'}]]
-        self.matcher.add('NAME', patterns)
-        matches = self.matcher(nlp_text)
+        self.matcher.add('NAME', patterns) 
+        matches = self.matcher(nlp_text) 
 
         # fetch the matches
         for match_id, start, end in matches:
-            span = nlp_text[start:end]
-            possible_names += [span.text]
-            if len(possible_names) >= 2:
+            span = nlp_text[start:end] 
+            possible_names += [span.text] 
+            if len(possible_names) >= 2: 
                 break
 
         # Extract candidates
@@ -243,11 +267,28 @@ class CV_parser():
         return re.findall(EMAIL_REGEX, self.stringtext)
 
     def fetch_phone_numbers(self):
-        
         return re.findall(PHONE_REGEX, self.stringtext)
 
     def fetch_links(self):
         return re.findall(LINKS_REGEX, self.stringtext)
+    
+    def fetch_address(self): 
+        # apply regrex finding for all sentences  
+        addr_list = [ l for sent in self.doc.sents for l in re.findall(STREET_REGEX, sent.text)]
+        
+        return addr_list
+    
+    def fetch_languages(self): 
+        """
+        Obtains language tokens in string text
+        """
+               
+        # tokenize, clean and filter document tokens 
+        toks = [re.sub(r'[^a-zA-Z]','', tok.text.lower().strip()) for tok in self.doc]
+        toks = [tok for tok in toks if len(tok)>1 and tok in LANGUAGES]
+        toks = sorted(set(toks))
+        
+        return toks
     
     def fetch_github(self): 
         
@@ -274,9 +315,9 @@ class CV_parser():
         urls = [l for l in self._links if 'linkedin' in l] 
                 
         return urls
-        
+    
 
-    def fetch_education(self):
+    def fetch_degrees(self):
         """
         Fetch education like tokens from the applicant's CV
         """
@@ -306,7 +347,7 @@ class CV_parser():
                 if re_tok in EDUCATION and re_tok not in self.stopwords:
                     edu[tok] = text + nlp_text[idx + 1]
 
-        # Extract year
+        # extract year? 
         education = []
         for key in edu.keys():
             year = re.search(re.compile(r'(((19|20)(\d{2})))'), edu[key])
@@ -316,6 +357,38 @@ class CV_parser():
                 education.append(key)
 
         return education
+    
+    
+    def fetch_education(self): 
+        """
+        Attemps to fetch educational institutions using nltk NER
+        """
+        # intialize storage vars
+        organizations = []
+        education = set()
+
+        ## 1.  first get all the organization names using nltk
+        
+        # go through every sentence
+        for sent in nltk.sent_tokenize(self.stringtext):
+            # the through every POS-tagged chunk 
+            for chunk in nltk.ne_chunk(nltk.pos_tag(nltk.word_tokenize(sent))):
+                # filter organizations 
+                if hasattr(chunk, 'label') and chunk.label() == 'ORGANIZATION':
+                    # append the matches to the result 
+                    organizations.append(' '.join(c[0] for c in chunk.leaves()))
+    
+        # we search for each bigram and trigram for reserved words
+        # (college, university etc...)
+        for org in organizations:
+            for word in SCHOOLWORDS:
+                # append if it appears in the organization 
+                if org.lower().find(word) >= 0:
+                    education.add(org)
+    
+        return list(education)
+    
+            
 
     def fetch_skills(self):
         """ 
@@ -349,13 +422,16 @@ class CV_parser():
         """
         Calls method to obtain information from input document and stores it. 
         """
-        self.parsed_doc['names'] = self.fetch_candidate_name()
-        self.parsed_doc['phones'] = self.fetch_phone_numbers()
-        self.parsed_doc['emails'] = self.fetch_emails()
-        self.parsed_doc['github'] = self.fetch_github()
-        self.parsed_doc['linkedin'] = self.fetch_linkedin()
-        self.parsed_doc['education'] = self.fetch_education()
-        self.parsed_doc['skills'] = self.fetch_skills()
+        self.parsed_doc['names'] = self.fetch_candidate_name() 
+        self.parsed_doc['phones'] = self.fetch_phone_numbers() 
+        self.parsed_doc['emails'] = self.fetch_emails() 
+        self.parsed_doc['github'] = self.fetch_github() 
+        self.parsed_doc['linkedin'] = self.fetch_linkedin() 
+        self.parsed_doc['degrees'] = self.fetch_degrees() 
+        self.parsed_doc['skills'] = self.fetch_skills() 
+        self.parsed_doc['education'] = self.fetch_education() 
+        self.parsed_doc['languages'] = self.fetch_languages() 
+        self.parsed_doc['addresses'] = self.fetch_address() 
         self.parsed_doc['raw_resume'] = self.stringtext
 
     def to_json(self, savedir='', filename='', defaultsave=False):

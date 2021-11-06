@@ -4,9 +4,12 @@
 2,emails,['sf@somedomain.com']
 3,github,[]
 4,linkedin,[]
-5,education,['BusinessMajor']
+5,degrees,['BusinessMajor']
 6,skills,[]
-7,raw_resume,"Susan Forsythe
+7,education,['XYZ College']
+8,languages,[]
+9,addresses,[]
+10,raw_resume,"Susan Forsythe
 
 Sometown, AZ 55555  |  555.555.5555  |  sf@somedomain.com  |  LinkedIn URL
 
